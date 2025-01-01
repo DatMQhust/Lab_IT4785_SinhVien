@@ -10,7 +10,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class StudentAdapter(private val students: MutableList<StudentModel> ): RecyclerView.Adapter<StudentAdapter.StudentViewHolder>() {
+class StudentAdapter(private val students: MutableList<Student> ): RecyclerView.Adapter<StudentAdapter.StudentViewHolder>() {
 
     interface OnContextMenuListener {
         fun onEdit(position: Int)
@@ -49,8 +49,8 @@ class StudentAdapter(private val students: MutableList<StudentModel> ): Recycler
 
     override fun onBindViewHolder(holder: StudentViewHolder, position: Int) {
         val student = students[position]
-        holder.textStudentName.text = student.studentName
-        holder.textStudentId.text = student.studentId
+        holder.textStudentName.text = student.hoten
+        holder.textStudentId.text = student.mssv
         holder.itemView.setOnClickListener{}
         holder.itemView.setOnLongClickListener {
             selectedPosition = position
